@@ -1,8 +1,8 @@
 export const navLinks = [
   {
-    label: 'Projects',
+    label: '',
     pathname: '/',
-    hash: '#project-1',
+    hash: '-1',
   },
   {
     label: 'Details',
@@ -21,18 +21,18 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    label: 'Twitter',
-    url: 'https://twitter.com/hamishMW',
+    label: 'Discord',
+    url: 'https://discord.gg/4aNhskEefJ',
     icon: 'twitter',
   },
   {
-    label: 'Figma',
-    url: 'https://www.figma.com/@Hamish',
+    label: 'Reddit',
+    url: 'https://www.reddit.com/user/ItsChasee',
     icon: 'figma',
   },
   {
     label: 'Github',
-    url: 'https://github.com/HamishMW',
+    url: 'https://github.com/chaseetech',
     icon: 'github',
   },
 ];
