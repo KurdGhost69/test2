@@ -2,9 +2,7 @@
   fill: var(--colorTextTitle);
   transition: fill var(--durationL) ease;
 }
-.SVG1 {
-  filter: invert(93%) sepia(0%) saturate(7485%) hue-rotate(140deg) brightness(107%) contrast(103%);
-}
+
 .monogram__highlight {
   fill: rgb(var(--rgbAccent));
   opacity: 0;

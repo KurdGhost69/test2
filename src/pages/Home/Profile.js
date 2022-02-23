@@ -30,23 +30,19 @@ const ProfileText = ({ status, titleId }) => (
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-I am chase, a tech enthusiast and programmer. 
-My main tech interests are Computer hardware, the linux kernel and OS, cyber security and OSINT, programming with python and finally decentralized cryptocurrency like monero.
-
-
+      I’m Hamish, currently I live in Sydney working as a senior product designer at{' '}
+      <Link href="https://www.qwilr.com">Qwilr</Link>. My projects include UX design, UI
+      animations, and icon illustration. Being comfortable with code allows me to rapidly
+      prototype and validate experiences. If you're interested in the tools and software I
+      use check out my <Link href="/uses">uses page</Link>.
     </Text>
-  
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-     <b>Linux experience </b><br /><br />
-
-I have 2 and a half years of Linux experience with using the OS daily, managing servers by only using bash command line and setting up virtual environments using hypervisors like Proxmox. Linux is my favourite OS as I use it for everyday computing tasks instead of windows or Mac OS because i believe in freedom and open source.
-<br /><br />
-<b>Programming experience</b> 
-<br /><br />
-Currently I’m learning python to develop tools and bots that have certain commands and function that I will make available to the public for free and it will be open source so others can modify it or change it to their liking.
+      In my spare time I like to practice Brazilian Jiu Jitsu, play video games, and{' '}
+      <Link href="/projects/volkihar-knight">make mods</Link>. I’m always down for hearing
+      about new projects, so feel free to drop me a line.
     </Text>
   </Fragment>
 );

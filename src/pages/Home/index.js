@@ -23,7 +23,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 
-const disciplines = ['Developer', 'Servers', 'Bots'];
+const disciplines = ['Developer', 'Prototyper', 'Animator', 'Illustrator', 'Modder'];
 
 const Home = () => {
   const { status } = useRouteTransition();
@@ -138,9 +138,8 @@ const Home = () => {
 
   return (
     <div className="home">
-      
       <Helmet>
-        <title>Chase | Python + Developer</title>
+        <title>Hamish Williams | Designer + Developer</title>
         <meta
           name="description"
           content="Portfolio of Hamish Williams – a digital designer working on web &amp; mobile
@@ -155,20 +154,15 @@ const Home = () => {
         disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
-            <Profile
-        sectionRef={details}
-        visible={visibleSections.includes(details.current)}
-        id="details"
-      />
       <ProjectSummary
-        id=""
+        id="project-1"
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
-        //index={1}
-        title=""
-        description=""
-        buttonText=""
-        buttonLink=""
+        index={1}
+        title="Designing the future of education"
+        description="Designing a platform to help educators build better online courseware"
+        buttonText="View Project"
+        buttonLink="/projects/smart-sparrow"
         model={{
           type: 'laptop',
           alt: 'Smart Sparrow lesson builder',
@@ -186,7 +180,7 @@ const Home = () => {
         alternate
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
-        //index={2}
+        index={2}
         title="Video game progress tracking"
         description="Design and development for a video game tracking app built in React Native"
         buttonText="View Website"
@@ -212,7 +206,7 @@ const Home = () => {
         id="project-3"
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
-        //index={3}
+        index={3}
         title="Biomedical image collaboration"
         description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
         buttonText="View Project"
@@ -229,7 +223,11 @@ const Home = () => {
           ],
         }}
       />
-
+      <Profile
+        sectionRef={details}
+        visible={visibleSections.includes(details.current)}
+        id="details"
+      />
       <Footer />
     </div>
   );
