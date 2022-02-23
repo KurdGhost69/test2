@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://hamishw.com",
+  "homepage": "https://kurdghost69.github.io/test2/",
   "description": "Portfolio site for Hamish Williams",
   "repository": "https://github.com/HamishMW/portfolio.git",
   "author": "Hamish Williams <hello@hamishw.com>",
@@ -19,6 +19,7 @@
     "@testing-library/user-event": "^12.5.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
+    "gh-pages": "^3.2.3",
     "mdx-loader": "^3.0.2",
     "prettier": "^2.2.1",
     "react-snap": "1.23.0",
@@ -39,11 +40,12 @@
     "three": "^0.125.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:storybook": "build-storybook -o build-storybook",
     "postbuild": "react-snap",
-    "deploy": "aws s3 sync --delete build/ s3://hamish-portfolio-site",
     "deploy:storybook": "aws s3 sync --delete build-storybook s3://hamish-portfolio-storybook",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
