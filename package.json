@@ -1,10 +1,10 @@
 {
-  "name": "portfolio",
+  "name": "Chase",
   "version": "0.1.0",
   "homepage": "https://kurdghost69.github.io/test2/",
-  "description": "Portfolio site for Hamish Williams",
-  "repository": "https://github.com/HamishMW/portfolio.git",
-  "author": "Hamish Williams <hello@hamishw.com>",
+  "description": "Portfolio site for Chase",
+  "repository": "https://github.com/HamishMW/test2.git",
+  "author": "Hamish and Saman",
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@hamishmw/react-scripts-postcss": "4.0.0-mod1",
