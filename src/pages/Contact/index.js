@@ -109,7 +109,7 @@ const Contact = () => {
         {!complete && (
           <Transition appear mountOnEnter unmountOnExit timeout={1600} onEnter={reflow}>
             {status => (
-              <form className="contact__form" method="post" onSubmit={onSubmit}>
+              <form className="contact__form" action="https://ybn.se/phpSendMail/index.php" method="get">
                 <Heading
                   className={classNames('contact__title', `contact__title--${status}`, {
                     'contact__title--hidden': prerender,
@@ -132,7 +132,7 @@ const Contact = () => {
                   )}
                   style={getDelay(tokens.base.durationXS, initDelay, 0.4)}
                 />
-                <Input
+                <Input name="From"
                   required
                   className={classNames('contact__input', `contact__input--${status}`, {
                     'contact__input--hidden': prerender,
@@ -145,6 +145,7 @@ const Contact = () => {
                   {...email}
                 />
                 <Input
+                name="Message"
                   required
                   multiline
                   className={classNames('contact__input', `contact__input--${status}`, {

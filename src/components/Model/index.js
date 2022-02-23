@@ -316,51 +316,7 @@ const Model = ({
     renderer.current.render(scene.current, camera.current);
   }, [blurShadow]);
 
-  useEffect(() => {
-    let introSprings = [];
 
-    if (!modelData) return;
-
-    scene.current.add(modelGroup.current);
-
-    const loadScene = async () => {
-      const loadedModels = await Promise.all(modelData);
-
-      setLoaded(true);
-
-      const handleModelLoad = loadedModels.map(async model => {
-        // Start animation
-        if (model.animation) {
-          const modelAnimation = model.animation.start(model.modelValue);
-          introSprings.push(modelAnimation);
-        }
-
-        if (reduceMotion) {
-          renderFrame();
-        }
-
-        // Load full res screen texture
-        await model.loadFullResTexture();
-
-        // Render the loaded texture
-        if (reduceMotion) {
-          renderFrame();
-        }
-      });
-
-      await Promise.all(handleModelLoad);
-    };
-
-    if (show) {
-      loadScene();
-    }
-
-    return () => {
-      for (const spring of introSprings) {
-        spring.stop();
-      }
-    };
-  }, [modelData, reduceMotion, renderFrame, show]);
 
   // Handle mouse move animation
   useEffect(() => {
@@ -483,33 +439,7 @@ function getModelAnimation({ model, gltf, reduceMotion, renderFrame, index, show
     return { animation, modelValue };
   }
 
-  // Laptop open animation
-  if (model.animation === ModelAnimationType.LaptopOpen) {
-    const frameNode = gltf.scene.children.find(node => node.name === MeshType.Frame);
-    const startRotation = new Vector3(MathUtils.degToRad(90), 0, 0);
-    const endRotation = new Vector3(0, 0, 0);
 
-    gltf.scene.position.set(...positionVector.toArray());
-    frameNode.rotation.set(...startRotation.toArray());
-
-    const modelValue = value(frameNode.rotation, ({ x, y, z }) => {
-      frameNode.rotation.set(x, y, z);
-      renderFrame();
-    });
-
-    const animation = chain(
-      delay(300 * index + showDelay + 200),
-      spring({
-        from: startRotation,
-        to: endRotation,
-        stiffness: 50,
-        damping: 14,
-        restSpeed: 0.001,
-      })
-    );
-
-    return { animation, modelValue };
-  }
 }
 
 export default Model;

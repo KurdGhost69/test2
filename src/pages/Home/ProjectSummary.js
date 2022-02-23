@@ -39,50 +39,15 @@ const ProjectSummary = ({
 
   const renderDetails = status => (
     <div className="project-summary__details">
-      <div aria-hidden className="project-summary__index">
-        <Divider
-          notchWidth="64px"
-          notchHeight="8px"
-          collapsed={status !== 'entered'}
-          collapseDelay={1000}
-        />
-        <span
-          className={classNames(
-            'project-summary__index-number',
-            `project-summary__index-number--${status}`
-          )}
-        >
-          {indexText}
-        </span>
-      </div>
-      <Heading
-        level={3}
-        as="h2"
-        className={classNames(
-          'project-summary__title',
-          `project-summary__title--${status}`
-        )}
-        id={titleId}
-      >
-        {title}
-      </Heading>
-      <Text
-        className={classNames(
-          'project-summary__description',
-          `project-summary__description--${status}`
-        )}
-      >
-        {description}
-      </Text>
+      
+
       <div
         className={classNames(
           'project-summary__button',
           `project-summary__button--${status}`
         )}
       >
-        <Button iconHoverShift href={buttonLink} iconEnd="arrowRight">
-          {buttonText}
-        </Button>
+
       </div>
     </div>
   );
@@ -91,17 +56,7 @@ const ProjectSummary = ({
     <div className="project-summary__preview">
       {model.type === 'laptop' && (
         <Fragment>
-          <KatakanaProject
-            style={{ '--opacity': svgOpacity }}
-            className={classNames(
-              'project-summary__svg',
-              'project-summary__svg--laptop',
-              `project-summary__svg--${status}`,
-              {
-                'project-summary__svg--light': theme.themeId === 'light',
-              }
-            )}
-          />
+
           <Model
             className={classNames(
               'project-summary__model',
@@ -125,17 +80,7 @@ const ProjectSummary = ({
       )}
       {model.type === 'phone' && (
         <Fragment>
-          <KatakanaProject
-            style={{ '--opacity': svgOpacity }}
-            className={classNames(
-              'project-summary__svg',
-              'project-summary__svg--phone',
-              `project-summary__svg--${status}`,
-              {
-                'project-summary__svg--light': theme.themeId === 'light',
-              }
-            )}
-          />
+         
           <Model
             className={classNames(
               'project-summary__model',
@@ -171,10 +116,7 @@ const ProjectSummary = ({
 
   return (
     <Section
-      className={classNames('project-summary', {
-        'project-summary--alternate': alternate,
-        'project-summary--first': index === '01',
-      })}
+    
       as="section"
       aria-labelledby={titleId}
       ref={sectionRef}
@@ -182,26 +124,7 @@ const ProjectSummary = ({
       tabIndex={-1}
       {...rest}
     >
-      <div className="project-summary__content">
-        <Transition in={visible} timeout={0} onEnter={reflow}>
-          {status => (
-            <Fragment>
-              {!alternate && !isMobile && (
-                <Fragment>
-                  {renderDetails(status)}
-                  {renderPreview(status)}
-                </Fragment>
-              )}
-              {(alternate || isMobile) && (
-                <Fragment>
-                  {renderPreview(status)}
-                  {renderDetails(status)}
-                </Fragment>
-              )}
-            </Fragment>
-          )}
-        </Transition>
-      </div>
+      
     </Section>
   );
 };
