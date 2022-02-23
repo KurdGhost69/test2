@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://kurdghost69.github.io/test2/",
   "description": "Portfolio site for Hamish Williams",
-  "repository": "https://github.com/KurdGhost69/test2.git",
+  "repository": "https://github.com/HamishMW/portfolio.git",
   "author": "Hamish Williams <hello@hamishw.com>",
   "devDependencies": {
     "@babel/core": "^7.12.3",
