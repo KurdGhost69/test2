@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/SmartSparrow/index.js"],"names":["window","location","replace"],"mappings":"yFAAAA,OAAOC,SAASC,QAAQ","file":"static/js/15.9046bc01.chunk.js","sourcesContent":["window.location.replace('http://somewhereelse.com');\r\n"],"sourceRoot":""}
